@@ -8,6 +8,7 @@ public class marbleMovement : MonoBehaviour
     Rigidbody rb;
     public float speed = 1.0f;
     public bool debug = true;
+    public Transform arrowIndicator;
     // public float rotSpeed = 60f;
 
 
@@ -28,6 +29,13 @@ public class marbleMovement : MonoBehaviour
         if(debug) {
             Debug.DrawRay(this.transform.position, dir * 2, Color.red, 0.5f);
         }
+    }
+
+    void LateUpdate() {
+        arrowIndicator.rotation = Quaternion.LookRotation(dir, Vector3.up);
+        Vector3 scale = Vector3.one;
+        scale.z = dir.magnitude;
+        arrowIndicator.localScale = scale * 2;
     }
 
     void FixedUpdate() {
