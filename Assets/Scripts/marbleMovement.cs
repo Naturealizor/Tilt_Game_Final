@@ -5,6 +5,7 @@ using UnityEngine;
 public class marbleMovement : MonoBehaviour
 {
     Vector3 dir;
+    Vector3 calibratedDir;
     Rigidbody rb;
     public float speed = 1.0f;
     public bool debug = true;
@@ -13,18 +14,17 @@ public class marbleMovement : MonoBehaviour
 
 
     // Start is called before the first frame update
-    void Start()
-    {
+    void Start() {
         rb = this.GetComponent<Rigidbody>();
+        Calibrate();
     }
 
     // Update is called once per frame
-    void Update()
-    {
+    void Update() {
         // Vector3 dir = Vector3.zero;
 
-        dir.x = Input.acceleration.x;
-        dir.z = Input.acceleration.y;
+        dir.x = Input.acceleration.x - calibratedDir.x;      // x to x
+        dir.z = Input.acceleration.y - calibratedDir.z;      // y to z
 
         if(debug) {
             Debug.DrawRay(this.transform.position, dir * 2, Color.red, 0.5f);
@@ -34,11 +34,18 @@ public class marbleMovement : MonoBehaviour
     void LateUpdate() {
         arrowIndicator.rotation = Quaternion.LookRotation(dir, Vector3.up);
         Vector3 scale = Vector3.one;
-        scale.z = dir.magnitude;
+        scale.z = dir.magnitude * 2;
         arrowIndicator.localScale = scale * 2;
     }
 
     void FixedUpdate() {
         rb.AddForce(dir * speed);
     }
+
+     public void Calibrate() {
+       calibratedDir.x = Input.acceleration.x;
+       calibratedDir.x = Input.acceleration.y;
+       Debug.Log("Calibrated Dir = " + calibratedDir);
+
+   }
 }
