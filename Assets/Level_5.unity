@@ -793,13 +793,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 284437650}
-  m_LocalRotation: {x: -0.5000004, y: 0, z: -0, w: 0.86602515}
-  m_LocalPosition: {x: 13.53, y: 19.41, z: 37.94}
-  m_LocalScale: {x: 7.5764327, y: 1, z: 3.4356394}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 13.53, y: -0.01, z: 19.579529}
+  m_LocalScale: {x: 7.5764327, y: 1, z: 3.4356391}
   m_Children:
   - {fileID: 1101890095}
-  m_Father: {fileID: 1128355696}
-  m_RootOrder: 0
+  m_Father: {fileID: 0}
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &286658763
 GameObject:
@@ -2948,8 +2948,7 @@ Transform:
   m_LocalRotation: {x: 0.5000004, y: -0, z: -0, w: 0.86602515}
   m_LocalPosition: {x: 0, y: 22.7, z: -16.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 284437654}
+  m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 60.000004, y: 0, z: 0}
@@ -5195,7 +5194,6 @@ MonoBehaviour:
   scoreText: {fileID: 0}
   score: 0
   canJump: 0
-  jumpButton: {fileID: 0}
   mainCam: {fileID: 1128355695}
   jumpSpeed: 5
 --- !u!135 &1988582573
