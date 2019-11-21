@@ -12,11 +12,11 @@ public class marbleMovement : MonoBehaviour
     Rigidbody rb;
 
      // ADDED FOR ARROWWS
-    private float turnDirection = 0;
-    public float rotSpeed = 10;
+    // private float turnDirection = 0;
+    // public float rotSpeed = 10;
     // ADDED FOR ARROWWS
 
-    public float speed = 10;        //1.0f
+    public float speed = 1.0f;        //1.0f
     public int score = 0;
     public bool canJump = false;
     public float jumpSpeed = 5f;
@@ -33,9 +33,9 @@ public class marbleMovement : MonoBehaviour
         rb = this.GetComponent<Rigidbody>();
         Calibrate();
         scoreText = GameObject.Find("ScoreText").GetComponent<TextMeshProUGUI>();
-        startPos = this.transform.position;
-        mainCam = GameObject.Find("MainCamera").GetComponent<Camera>();
-        jumpButton.SetActive(canJump);
+        // startPos = this.transform.position;
+        // mainCam = GameObject.Find("MainCamera").GetComponent<Camera>();
+        // jumpButton.SetActive(canJump);
     }
 
     // Update is called once per frame
