@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/World 2/Level 2-3.unity
     guid: 98e8541be7be6144b889209e0a4ea517
+  - enabled: 1
+    path: Assets/Credits.unity
+    guid: 47e256fb4d1e2194688fe86cab01bfba
   m_configObjects: {}

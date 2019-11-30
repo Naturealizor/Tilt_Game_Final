@@ -26,14 +26,16 @@ public class marbleMovement : MonoBehaviour
     public Transform arrowIndicator;
     public TextMeshProUGUI scoreText;
     public GameObject jumpButton;
+    public GameObject winScreen;
     public Camera mainCam;      // assign this in Start() to the "MainCamera"
 
     // Start is called before the first frame update
     void Start() {
         rb = this.GetComponent<Rigidbody>();
         Calibrate();
-        //scoreText = GameObject.Find("ScoreText").GetComponent<TextMeshProUGUI>();
         startPos = this.transform.position;
+        winScreen.SetActive(false);
+        scoreText = GameObject.Find("ScoreText").GetComponent<TextMeshProUGUI>();
         // mainCam = GameObject.Find("MainCamera").GetComponent<Camera>();
         // jumpButton.SetActive(canJump);
     }
@@ -62,6 +64,16 @@ public class marbleMovement : MonoBehaviour
 
         if(debug) {
             Debug.DrawRay(this.transform.position, dir * 2, Color.red, 0.5f);
+        }if(score >= 1000) {
+            Win();
+        }
+    }
+
+    void Win() {
+        if(score>= 1000) {
+            winScreen.SetActive(true);
+        } else {
+            winScreen.SetActive(false);
         }
     }
 
