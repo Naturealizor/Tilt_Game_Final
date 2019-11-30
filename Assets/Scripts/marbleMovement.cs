@@ -1,9 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using TMPro;
-using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
 public class marbleMovement : MonoBehaviour
 {
@@ -35,6 +31,7 @@ public class marbleMovement : MonoBehaviour
         Calibrate();
         startPos = this.transform.position;
         winScreen.SetActive(false);
+        Debug.LogError("error");
         scoreText = GameObject.Find("ScoreText").GetComponent<TextMeshProUGUI>();
         // mainCam = GameObject.Find("MainCamera").GetComponent<Camera>();
         // jumpButton.SetActive(canJump);
