@@ -32,8 +32,8 @@ public class marbleMovement : MonoBehaviour
     void Start() {
         rb = this.GetComponent<Rigidbody>();
         Calibrate();
-        scoreText = GameObject.Find("ScoreText").GetComponent<TextMeshProUGUI>();
-        // startPos = this.transform.position;
+        //scoreText = GameObject.Find("ScoreText").GetComponent<TextMeshProUGUI>();
+        startPos = this.transform.position;
         // mainCam = GameObject.Find("MainCamera").GetComponent<Camera>();
         // jumpButton.SetActive(canJump);
     }
