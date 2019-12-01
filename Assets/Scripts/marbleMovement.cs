@@ -7,12 +7,7 @@ public class marbleMovement : MonoBehaviour
     Vector3 calibratedDir;
     Rigidbody rb;
 
-     // ADDED FOR ARROWWS
-    // private float turnDirection = 0;
-    // public float rotSpeed = 10;
-    // ADDED FOR ARROWWS
-
-    public float speed = 1.0f;        //1.0f
+    public float speed = 1.0f;        
     public int score = 0;
     public bool canJump = false;
     public float jumpSpeed = 5f;
@@ -26,36 +21,20 @@ public class marbleMovement : MonoBehaviour
     public Camera mainCam;      // assign this in Start() to the "MainCamera"
 
     // Start is called before the first frame update
-    void Start() {
+    void Start() 
+    {
         rb = this.GetComponent<Rigidbody>();
         Calibrate();
-        startPos = this.transform.position;
+        Vector3 position = this.transform.position;
+        startPos = position;
         winScreen.SetActive(false);
-        Debug.LogError("error");
         scoreText = GameObject.Find("ScoreText").GetComponent<TextMeshProUGUI>();
-        // mainCam = GameObject.Find("MainCamera").GetComponent<Camera>();
-        // jumpButton.SetActive(canJump);
+        mainCam = GameObject.Find("MainCamera").GetComponent<Camera>();
+        jumpButton.SetActive(canJump);
     }
 
     // Update is called once per frame
     void Update() {
-         if (Input.GetKey(KeyCode.LeftArrow))
-     {
-         transform.position += Vector3.left * speed * Time.deltaTime;
-     }
-     if (Input.GetKey(KeyCode.RightArrow))
-     {
-         transform.position += Vector3.right * speed * Time.deltaTime;
-     }
-     if (Input.GetKey(KeyCode.UpArrow))
-     {
-         transform.position += Vector3.forward * speed * Time.deltaTime;
-     }
-     if (Input.GetKey(KeyCode.DownArrow))
-     {
-         transform.position += Vector3.back * speed * Time.deltaTime;
-     }
-     
         dir.x = Input.acceleration.x - calibratedDir.x;      // x to x
         dir.z = Input.acceleration.y - calibratedDir.z;      // y to z
 
@@ -64,6 +43,25 @@ public class marbleMovement : MonoBehaviour
         }if(score >= 1000) {
             Win();
         }
+        
+        // USED TO MAKE ARROW KEYS MOVE PLAYER
+
+        //  if (Input.GetKey(KeyCode.LeftArrow))
+    //  {
+    //      transform.position += Vector3.left * speed * Time.deltaTime;
+    //  }
+    //  if (Input.GetKey(KeyCode.RightArrow))
+    //  {
+    //      transform.position += Vector3.right * speed * Time.deltaTime;
+    //  }
+    //  if (Input.GetKey(KeyCode.UpArrow))
+    //  {
+    //      transform.position += Vector3.forward * speed * Time.deltaTime;
+    //  }
+    //  if (Input.GetKey(KeyCode.DownArrow))
+    //  {
+    //      transform.position += Vector3.back * speed * Time.deltaTime;
+    //  }
     }
 
     void Win() {
