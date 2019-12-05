@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class marbleMovement : MonoBehaviour
 {
@@ -17,6 +18,7 @@ public class marbleMovement : MonoBehaviour
     public Transform arrowIndicator;
     public TextMeshProUGUI scoreText;
     public GameObject jumpButton;
+    public GameObject nextLevelButton;
     public GameObject winScreen;
     public Camera mainCam;      // assign this in Start() to the "MainCamera"
 
@@ -43,26 +45,8 @@ public class marbleMovement : MonoBehaviour
         }if(score >= 1000) {
             Win();
         }
-        
-        // USED TO MAKE ARROW KEYS MOVE PLAYER
-
-        //  if (Input.GetKey(KeyCode.LeftArrow))
-    //  {
-    //      transform.position += Vector3.left * speed * Time.deltaTime;
-    //  }
-    //  if (Input.GetKey(KeyCode.RightArrow))
-    //  {
-    //      transform.position += Vector3.right * speed * Time.deltaTime;
-    //  }
-    //  if (Input.GetKey(KeyCode.UpArrow))
-    //  {
-    //      transform.position += Vector3.forward * speed * Time.deltaTime;
-    //  }
-    //  if (Input.GetKey(KeyCode.DownArrow))
-    //  {
-    //      transform.position += Vector3.back * speed * Time.deltaTime;
-    //  }
     }
+
 
     void Win() {
         if(score>= 1000) {
@@ -103,6 +87,13 @@ public class marbleMovement : MonoBehaviour
         if(grounded && canJump) {
             rb.AddForce(Vector3.up * jumpSpeed, ForceMode.Impulse);
         }
+    }
+    public void nextLevel() {
+        int nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
+         if (SceneManager.sceneCountInBuildSettings > nextSceneIndex)
+         {
+            SceneManager.LoadScene(nextSceneIndex);
+         }
     }
 
     public void Teleport() {
@@ -156,4 +147,22 @@ public class marbleMovement : MonoBehaviour
            
 
 
-        
+         // USED TO MAKE ARROW KEYS MOVE PLAYER
+
+        //  if (Input.GetKey(KeyCode.LeftArrow))
+    //  {
+    //      transform.position += Vector3.left * speed * Time.deltaTime;
+    //  }
+    //  if (Input.GetKey(KeyCode.RightArrow))
+    //  {
+    //      transform.position += Vector3.right * speed * Time.deltaTime;
+    //  }
+    //  if (Input.GetKey(KeyCode.UpArrow))
+    //  {
+    //      transform.position += Vector3.forward * speed * Time.deltaTime;
+    //  }
+    //  if (Input.GetKey(KeyCode.DownArrow))
+    //  {
+    //      transform.position += Vector3.back * speed * Time.deltaTime;
+    //  }
+    
