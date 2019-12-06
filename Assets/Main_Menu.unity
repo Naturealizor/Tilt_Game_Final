@@ -972,7 +972,7 @@ Transform:
   - {fileID: 1059166062}
   - {fileID: 1373490388}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1256700368
 GameObject:
@@ -1253,62 +1253,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &1361310804
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1361310806}
-  - component: {fileID: 1361310805}
-  m_Layer: 0
-  m_Name: GameObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1361310805
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1361310804}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec831db7a1f8f41c388d46fb749827c6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mainMenuIndex: 0
-  worldIndex: 1
-  world2Index: 2
-  world3Index: 3
-  world4Index: 4
-  world5Index: 5
-  songs:
-  - {fileID: 8300000, guid: 3a18a36a3d8233f49a5c0000fe6ec847, type: 3}
-  - {fileID: 8300000, guid: 44467872bc1964441aaa1972841fbb98, type: 3}
-  - {fileID: 8300000, guid: 30b5e9ffc5737ea49a3ecf98d0af381a, type: 3}
-  - {fileID: 0}
-  - {fileID: 0}
-  debug: 1
---- !u!4 &1361310806
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1361310804}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.89, y: -0.25, z: 55.44}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1373490387
 GameObject:
   m_ObjectHideFlags: 0
@@ -2125,7 +2069,7 @@ PrefabInstance:
     - target: {fileID: 1808262732628365474, guid: 78ba29023f100ed43a191c9421812c9b,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1808262732628365474, guid: 78ba29023f100ed43a191c9421812c9b,
         type: 3}
@@ -2146,6 +2090,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_audioClip
       value: 
-      objectReference: {fileID: 8300000, guid: 7131229012ad2564cb6f4c7c599977fc, type: 3}
+      objectReference: {fileID: 8300000, guid: f671304f0a07e0b46af7e26606571fc0, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 78ba29023f100ed43a191c9421812c9b, type: 3}

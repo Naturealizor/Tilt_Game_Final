@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2581,6 +2581,12 @@ PrefabInstance:
 --- !u!224 &509163036 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4004388553512565285, guid: 00a4dfce2977fe944a5036dfe895160e,
+    type: 3}
+  m_PrefabInstance: {fileID: 509163035}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &509163037 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4004388553512565290, guid: 00a4dfce2977fe944a5036dfe895160e,
     type: 3}
   m_PrefabInstance: {fileID: 509163035}
   m_PrefabAsset: {fileID: 0}
@@ -7225,10 +7231,10 @@ MonoBehaviour:
   jumpSpeed: 5
   debug: 1
   arrowIndicator: {fileID: 1871106845}
-  scoreText: {fileID: 0}
-  jumpButton: {fileID: 0}
-  nextLevelButton: {fileID: 0}
-  winScreen: {fileID: 0}
+  scoreText: {fileID: 853156146}
+  jumpButton: {fileID: 439092405}
+  nextLevelButton: {fileID: 864622611}
+  winScreen: {fileID: 509163037}
   mainCam: {fileID: 0}
 --- !u!135 &1988582573
 SphereCollider:

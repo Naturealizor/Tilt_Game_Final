@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1286,6 +1286,7 @@ GameObject:
   - component: {fileID: 270733450}
   - component: {fileID: 270733452}
   - component: {fileID: 270733451}
+  - component: {fileID: 270733453}
   m_Layer: 0
   m_Name: Default (1)
   m_TagString: Coin
@@ -1352,6 +1353,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 270733449}
   m_Mesh: {fileID: 4300000, guid: 69e570a331da80d4f9bb60a69b974919, type: 3}
+--- !u!135 &270733453
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 270733449}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.025000006
+  m_Center: {x: -0.000000029802322, y: -0.00000047683716, z: 0.0000000037252903}
 --- !u!1001 &278892625
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2471,6 +2485,7 @@ GameObject:
   - component: {fileID: 472742439}
   - component: {fileID: 472742441}
   - component: {fileID: 472742440}
+  - component: {fileID: 472742442}
   m_Layer: 0
   m_Name: Default (3)
   m_TagString: Coin
@@ -2537,6 +2552,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 472742438}
   m_Mesh: {fileID: 4300000, guid: 69e570a331da80d4f9bb60a69b974919, type: 3}
+--- !u!135 &472742442
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 472742438}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.025000006
+  m_Center: {x: -0.000000029802322, y: -0.0000009536743, z: 0.0000000037252903}
 --- !u!1001 &476216982
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4882,6 +4910,7 @@ GameObject:
   - component: {fileID: 1279442535}
   - component: {fileID: 1279442537}
   - component: {fileID: 1279442536}
+  - component: {fileID: 1279442538}
   m_Layer: 0
   m_Name: Default (2)
   m_TagString: Coin
@@ -4948,6 +4977,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1279442534}
   m_Mesh: {fileID: 4300000, guid: 69e570a331da80d4f9bb60a69b974919, type: 3}
+--- !u!135 &1279442538
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1279442534}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.025000006
+  m_Center: {x: -0.000000029802322, y: -0.00000047683716, z: 0.000000007450581}
 --- !u!1 &1289355662
 GameObject:
   m_ObjectHideFlags: 0
