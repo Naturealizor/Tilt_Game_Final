@@ -9,6 +9,12 @@ TagManager:
   - scoreText
   - CustomCam
   - Music
+  - Spikes
+  - nextLevel
+  - restartLevel
+  - mainMenu
+  - jumpButton
+  - Calibrate
   layers:
   - Default
   - TransparentFX

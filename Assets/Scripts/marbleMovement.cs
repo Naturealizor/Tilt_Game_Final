@@ -17,12 +17,13 @@ public class marbleMovement : MonoBehaviour
     public bool debug = true;
     public bool playerIsDead = false;
     bool grounded = true;
-    public int currScene = SceneManager.GetActiveScene().buildIndex;
+    public int currScene;
     
     public Transform arrowIndicator;
     public TextMeshProUGUI scoreText;
+    public TextMeshProUGUI healthText;
     public GameObject jumpButton;
-    public GameObject nextLevelButton;
+    public GameObject nextLevel;
     public GameObject winScreen;
     public GameObject deathScreen;
     public GameObject restartButton;
@@ -32,14 +33,16 @@ public class marbleMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start() 
     {
+        currScene = SceneManager.GetActiveScene().buildIndex;
         Time.timeScale = 1;
         rb = this.GetComponent<Rigidbody>();
         Calibrate();
         Vector3 position = this.transform.position;
         startPos = position;
         scoreText = GameObject.Find("ScoreText").GetComponent<TextMeshProUGUI>();
+        healthText = GameObject.Find("HealthText").GetComponent<TextMeshProUGUI>();
         mainCam = GameObject.Find("MainCamera").GetComponent<Camera>();
-        nextLevelButton.SetActive(false);
+        nextLevel.SetActive(false);
         jumpButton.SetActive(true);
         winScreen.SetActive(false);
         deathScreen.SetActive(false);
@@ -56,7 +59,10 @@ public class marbleMovement : MonoBehaviour
             Debug.DrawRay(this.transform.position, dir * 2, Color.red, 0.5f);
         }if(score >= 1000) {
             Win();
+        }else if (health <= 0) {
+            youDied();
         }
+        healthText.text = "Health = " + health;
     }
 
     void LateUpdate() {
@@ -96,8 +102,10 @@ public class marbleMovement : MonoBehaviour
         if(score>= 1000) {
             Time.timeScale = 0;
             winScreen.SetActive(true);
+            nextLevel.SetActive(true);
         } else {
             winScreen.SetActive(false);
+            nextLevel.SetActive(true);
         }
     }
 
@@ -109,7 +117,7 @@ public class marbleMovement : MonoBehaviour
             menuButton.SetActive(true);
         }
     }
-    public void nextLevel() {
+    public void nextLevelController() {
         SceneManager.LoadScene(currScene + 1);
     }
 
@@ -137,7 +145,8 @@ public class marbleMovement : MonoBehaviour
 
     void OnTriggerEnter(Collider other) {
         if(other.gameObject.CompareTag("Spikes")) {
-            Destroy(this.gameObject);
+            health -= 100;
+            healthText.text = "Health = " + health;
         }
         if(other.gameObject.name == "JumpPowerup") {
                canJump = true;
