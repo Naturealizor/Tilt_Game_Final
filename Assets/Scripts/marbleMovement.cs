@@ -11,30 +11,40 @@ public class marbleMovement : MonoBehaviour
 
     public float speed = 5.0f;        
     public int score = 0;
+    public int health = 100;
     public bool canJump = true;
     public float jumpSpeed = 5f;
     public bool debug = true;
+    public bool playerIsDead = false;
     bool grounded = true;
+    public int currScene = SceneManager.GetActiveScene().buildIndex;
     
     public Transform arrowIndicator;
     public TextMeshProUGUI scoreText;
     public GameObject jumpButton;
     public GameObject nextLevelButton;
     public GameObject winScreen;
+    public GameObject deathScreen;
+    public GameObject restartButton;
+    public GameObject menuButton;
     public Camera mainCam;      // assign this in Start() to the "MainCamera"
 
     // Start is called before the first frame update
     void Start() 
     {
+        Time.timeScale = 1;
         rb = this.GetComponent<Rigidbody>();
         Calibrate();
         Vector3 position = this.transform.position;
         startPos = position;
         scoreText = GameObject.Find("ScoreText").GetComponent<TextMeshProUGUI>();
         mainCam = GameObject.Find("MainCamera").GetComponent<Camera>();
-        nextLevelButton = GameObject.Find("nextLevel");
-        jumpButton.SetActive(canJump);
+        nextLevelButton.SetActive(false);
+        jumpButton.SetActive(true);
         winScreen.SetActive(false);
+        deathScreen.SetActive(false);
+        restartButton.SetActive(false);
+        menuButton.SetActive(false);
     }
 
     // Update is called once per frame
@@ -60,15 +70,6 @@ public class marbleMovement : MonoBehaviour
         }
     }
 
-    void Win() {
-        if(score>= 1000) {
-            Time.timeScale = 0;
-            winScreen.SetActive(true);
-        } else {
-            winScreen.SetActive(false);
-        }
-    }
-
     void ResetPosition() {
         this.transform.position = startPos;
         rb.velocity = Vector3.zero;     // this stops all movement
@@ -90,8 +91,34 @@ public class marbleMovement : MonoBehaviour
             Debug.Log("Pressed it");
         }
     }
+
+    void Win() {
+        if(score>= 1000) {
+            Time.timeScale = 0;
+            winScreen.SetActive(true);
+        } else {
+            winScreen.SetActive(false);
+        }
+    }
+
+    void youDied() {
+        if (health <= 0) {
+            Destroy(this.gameObject);
+            deathScreen.SetActive(true);
+            restartButton.SetActive(true);
+            menuButton.SetActive(true);
+        }
+    }
     public void nextLevel() {
-        //SceneManager.LoadSceneAsync(2);
+        SceneManager.LoadScene(currScene + 1);
+    }
+
+    public void Restart() {
+        SceneManager.LoadScene(currScene);
+    }
+
+    public void mainMenu() {
+        SceneManager.LoadScene(0);
     }
 
     public void Teleport() {
@@ -109,6 +136,9 @@ public class marbleMovement : MonoBehaviour
     }
 
     void OnTriggerEnter(Collider other) {
+        if(other.gameObject.CompareTag("Spikes")) {
+            Destroy(this.gameObject);
+        }
         if(other.gameObject.name == "JumpPowerup") {
                canJump = true;
                jumpButton.SetActive(canJump);
