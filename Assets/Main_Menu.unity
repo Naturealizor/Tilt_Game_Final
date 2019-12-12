@@ -576,7 +576,7 @@ GameObject:
   - component: {fileID: 1074018084}
   - component: {fileID: 1074018083}
   m_Layer: 5
-  m_Name: Button
+  m_Name: newGame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -822,7 +822,7 @@ GameObject:
   - component: {fileID: 1208361266}
   - component: {fileID: 1208361265}
   m_Layer: 5
-  m_Name: Button (2)
+  m_Name: quitGame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1069,7 +1069,7 @@ GameObject:
   - component: {fileID: 1290789560}
   - component: {fileID: 1290789559}
   m_Layer: 5
-  m_Name: Button (1)
+  m_Name: worldSelector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1898,7 +1898,7 @@ GameObject:
   - component: {fileID: 1984723933}
   - component: {fileID: 1984723932}
   m_Layer: 5
-  m_Name: Button (3)
+  m_Name: credits
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

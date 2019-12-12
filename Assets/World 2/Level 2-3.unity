@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1042,6 +1042,7 @@ GameObject:
   - component: {fileID: 185207537}
   - component: {fileID: 185207536}
   - component: {fileID: 185207535}
+  - component: {fileID: 185207539}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1134,6 +1135,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &185207539
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 185207534}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03990ed1fa459c44ab6cf139e4f02189, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &185882717
 GameObject:
   m_ObjectHideFlags: 0
@@ -1330,7 +1343,7 @@ GameObject:
   - component: {fileID: 233446208}
   - component: {fileID: 233446207}
   m_Layer: 5
-  m_Name: Button (1)
+  m_Name: jumpButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2380,7 +2393,7 @@ GameObject:
   - component: {fileID: 349432122}
   - component: {fileID: 349432121}
   m_Layer: 5
-  m_Name: Button (2)
+  m_Name: Zip
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2749,6 +2762,12 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.Slider+SliderEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!1 &523866892 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4004388553512565290, guid: 00a4dfce2977fe944a5036dfe895160e,
+    type: 3}
+  m_PrefabInstance: {fileID: 606992336}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &562267507
 GameObject:
   m_ObjectHideFlags: 0
@@ -3428,7 +3447,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: f60676bfbeb3e8c43800340b30db7f6b, type: 3}
     m_FontSize: 57
     m_FontStyle: 0
     m_BestFit: 0
@@ -3660,7 +3679,7 @@ GameObject:
   - component: {fileID: 944646637}
   - component: {fileID: 944646636}
   m_Layer: 5
-  m_Name: Button
+  m_Name: Calibrate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4431,7 +4450,7 @@ GameObject:
   - component: {fileID: 1128355694}
   - component: {fileID: 1128355697}
   m_Layer: 0
-  m_Name: Main Camera
+  m_Name: MainCamera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5595,7 +5614,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: f60676bfbeb3e8c43800340b30db7f6b, type: 3}
     m_FontSize: 57
     m_FontStyle: 0
     m_BestFit: 0
@@ -6938,8 +6957,8 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 259
+    m_Font: {fileID: 12800000, guid: f60676bfbeb3e8c43800340b30db7f6b, type: 3}
+    m_FontSize: 195
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -6974,7 +6993,7 @@ GameObject:
   - component: {fileID: 1813939892}
   - component: {fileID: 1813939891}
   m_Layer: 5
-  m_Name: Button (3)
+  m_Name: nextLevel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7040,13 +7059,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1988582572}
-        m_MethodName: nextLevel
-        m_Mode: 1
+      - m_Target: {fileID: 185207539}
+        m_MethodName: SwitchScene
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 6
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -7810,10 +7829,10 @@ MonoBehaviour:
   jumpSpeed: 5
   debug: 1
   arrowIndicator: {fileID: 1871106845}
-  scoreText: {fileID: 0}
-  jumpButton: {fileID: 0}
-  nextLevelButton: {fileID: 0}
-  winScreen: {fileID: 0}
+  scoreText: {fileID: 1373468191}
+  jumpButton: {fileID: 233446205}
+  nextLevelButton: {fileID: 1813939889}
+  winScreen: {fileID: 523866892}
   mainCam: {fileID: 1128355695}
 --- !u!135 &1988582573
 SphereCollider:

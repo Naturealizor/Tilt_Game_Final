@@ -5,12 +5,13 @@ using UnityEngine.SceneManagement;
 public class marbleMovement : MonoBehaviour
 {
     Vector3 dir;
+    Vector3 startPos;
     Vector3 calibratedDir;
     Rigidbody rb;
 
-    public float speed = 1.0f;        
+    public float speed = 5.0f;        
     public int score = 0;
-    public bool canJump = false;
+    public bool canJump = true;
     public float jumpSpeed = 5f;
     public bool debug = true;
     bool grounded = true;
@@ -29,10 +30,11 @@ public class marbleMovement : MonoBehaviour
         Calibrate();
         Vector3 position = this.transform.position;
         startPos = position;
-        winScreen.SetActive(false);
         scoreText = GameObject.Find("ScoreText").GetComponent<TextMeshProUGUI>();
-        //mainCam = GameObject.Find("MainCamera").GetComponent<Camera>();
+        mainCam = GameObject.Find("MainCamera").GetComponent<Camera>();
+        nextLevelButton = GameObject.Find("nextLevel");
         jumpButton.SetActive(canJump);
+        winScreen.SetActive(false);
     }
 
     // Update is called once per frame
@@ -47,15 +49,6 @@ public class marbleMovement : MonoBehaviour
         }
     }
 
-
-    void Win() {
-        if(score>= 1000) {
-            winScreen.SetActive(true);
-        } else {
-            winScreen.SetActive(false);
-        }
-    }
-
     void LateUpdate() {
         arrowIndicator.rotation = Quaternion.LookRotation(dir, Vector3.up);
         Vector3 scale = Vector3.one;
@@ -67,7 +60,15 @@ public class marbleMovement : MonoBehaviour
         }
     }
 
-    Vector3 startPos;
+    void Win() {
+        if(score>= 1000) {
+            Time.timeScale = 0;
+            winScreen.SetActive(true);
+        } else {
+            winScreen.SetActive(false);
+        }
+    }
+
     void ResetPosition() {
         this.transform.position = startPos;
         rb.velocity = Vector3.zero;     // this stops all movement
@@ -84,16 +85,13 @@ public class marbleMovement : MonoBehaviour
    }
 
     public void Jump() {
-        if(grounded && canJump) {
+        if(grounded) { //&& canJump
             rb.AddForce(Vector3.up * jumpSpeed, ForceMode.Impulse);
+            Debug.Log("Pressed it");
         }
     }
     public void nextLevel() {
-        int nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
-         if (SceneManager.sceneCountInBuildSettings > nextSceneIndex)
-         {
-            SceneManager.LoadScene(nextSceneIndex);
-         }
+        //SceneManager.LoadSceneAsync(2);
     }
 
     public void Teleport() {
@@ -102,10 +100,12 @@ public class marbleMovement : MonoBehaviour
 
     void OnCollisionEnter() { 
        grounded = true;
+       //canJump = true;
        }
 
     void OnCollisionExit() {
-        grounded = false;        
+        grounded = false;
+        //canJump = false;        
     }
 
     void OnTriggerEnter(Collider other) {
@@ -139,10 +139,6 @@ public class marbleMovement : MonoBehaviour
     // Finish the slider
     // Finish the 2 levels
     // Look into teleporters
-    // Add jump powerups and force platforms
-    // 
-
-
  // NEED TO FINISH THIS PART
            
 
